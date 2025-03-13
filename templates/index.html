@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 class="display-4 mb-4">Welcome to GPU SaaS Platform</h1>
+        <p class="lead">Manage your GPU resources across multiple providers with ease</p>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Cloud GPU Rentals</h5>
+                <p class="card-text">Access high-performance GPUs from leading providers like Lambda Labs, Vast.ai, and RunPod.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Dedicated Servers</h5>
+                <p class="card-text">Deploy your own GPU servers with providers like OVHCloud and Hetzner.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Resource Management</h5>
+                <p class="card-text">Monitor and manage all your GPU resources from a single dashboard.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12 text-center">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">Go to Dashboard</a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg">Get Started</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %} 
