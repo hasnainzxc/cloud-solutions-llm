@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 240, 240, 240;
+  --primary-rgb: 79, 70, 229;
+  --primary-light-rgb: 120, 112, 240;
+  --secondary-rgb: 16, 185, 129;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 15, 15, 15;
+    --background-end-rgb: 10, 10, 10;
+    --primary-rgb: 120, 112, 240;
+    --primary-light-rgb: 140, 132, 250;
+    --secondary-rgb: 26, 195, 139;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700;
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 rounded-md bg-primary-600 text-white hover:bg-primary-700 transition-colors font-medium;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors font-medium;
+  }
+
+  /* Gradient animations */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-transform duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-md;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .card-hover:hover {
+    @apply shadow-md -translate-y-1;
+    box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.15);
+  }
+
+  /* Button effects */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: transform 0.5s;
+  }
+
+  .btn-glow:hover::after {
+    transform: rotate(30deg) translate(50%, 50%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+} 

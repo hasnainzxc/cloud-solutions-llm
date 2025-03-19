@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# PDF outputs
+*.pdf
+
+# Font files
+*.ttf
+
+# Environment variables
+.env
+
+.venv
+.history
+
+# Set default behavior to automatically normalize line endings
+* text=auto eol=lf
+
+# Force batch scripts to use CRLF
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+
+# Force bash scripts to use LF
+*.sh text eol=lf
+
+# JavaScript/TypeScript files
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+
+# Web files
+*.css text eol=lf
+*.scss text eol=lf
+*.html text eol=lf
