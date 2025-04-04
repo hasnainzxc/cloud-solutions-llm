@@ -6,6 +6,10 @@ __pycache__/
 .Python
 env/
 build/
+
+# build
+dist/
+build/
 develop-eggs/
 dist/
 downloads/
@@ -61,3 +65,25 @@ ENV/
 *.css text eol=lf
 *.scss text eol=lf
 *.html text eol=lf
+
+node_modules/
+vendor/
+# Next.js build output
+.next/
+.next/cache/
+.next/server/
+.next/static/
+
+**/.next/
+**/.next/cache/**
+**/.next/server/** 
+**/.next/static/**
+
+
+.env
+*.log
+
+
+# OS
+.DS_Store
+Thumbs.dbs

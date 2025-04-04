@@ -67,7 +67,7 @@ export default function Home() {
               className="hidden md:block"
             >
               <img 
-                src="/undraw_cloud-hosting_tfeh.svg" 
+                src="/undraw/undraw_cloud-hosting_tfeh.svg" 
                 alt="GPU Server Cluster" 
                 className="w-full"
               />
