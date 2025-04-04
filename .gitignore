@@ -6,6 +6,10 @@ __pycache__/
 .Python
 env/
 build/
+
+# build
+dist/
+build/
 develop-eggs/
 dist/
 downloads/
@@ -39,3 +43,47 @@ ENV/
 
 .venv
 .history
+
+# Set default behavior to automatically normalize line endings
+* text=auto eol=lf
+
+# Force batch scripts to use CRLF
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+
+# Force bash scripts to use LF
+*.sh text eol=lf
+
+# JavaScript/TypeScript files
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+
+# Web files
+*.css text eol=lf
+*.scss text eol=lf
+*.html text eol=lf
+
+node_modules/
+vendor/
+# Next.js build output
+.next/
+.next/cache/
+.next/server/
+.next/static/
+
+**/.next/
+**/.next/cache/**
+**/.next/server/** 
+**/.next/static/**
+
+
+.env
+*.log
+
+
+# OS
+.DS_Store
+Thumbs.db
